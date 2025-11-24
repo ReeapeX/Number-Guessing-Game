@@ -1,0 +1,162 @@
+/* 1. Globaler Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a2a4b;
+    color: #e0e6f0;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 2. Header Leiste */
+#head {
+    background-color: #15223d;
+    width: 100%;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+header {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #8faacb;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* 3. Titel */
+h1#headline {
+    font-size: 3.5em;
+    font-weight: 300;
+    color: #ffffff;
+    margin-top: 80px;
+    margin-bottom: 20px; /* Etwas weniger Abstand zum Label */
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+/* 4. Versuche-Anzeige (Label) */
+#displayTries {
+    width: 90%;
+    max-width: 450px; /* Etwas breiter, damit es bündig mit dem Formular ist */
+    margin: 0 auto 15px auto;
+    
+    text-align: center; /* Zentriert wie im Screenshot */
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #5a8bc9;
+    letter-spacing: 1.5px;
+}
+
+/* 5. Container für das Formular */
+.game-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* DAS IST NEU: Formular als Flex-Row (Nebeneinander) */
+form {
+    display: flex;
+    flex-direction: row; /* Nebeneinander */
+    align-items: center; /* Vertikal zentriert */
+    gap: 15px; /* Abstand zwischen Input und Button */
+    
+    width: 90%;
+    max-width: 450px; /* Begrenzung der Gesamtbreite */
+}
+
+/* 6. Eingabefeld */
+input[type="number"] {
+    flex-grow: 1; /* Nimmt den verfügbaren Platz ein */
+    width: auto;  /* Automatische Breite durch Flexbox */
+    padding: 10px 0;
+    
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #466699;
+    border-radius: 0;
+    
+    font-size: 1.5em; /* Etwas kleiner damit es neben den Button passt */
+    color: #fff;
+    text-align: left; /* Text linksbündig wie im Screenshot */
+    padding-left: 5px;
+    
+    appearance: textfield;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8em;
+}
+
+input[type="number"]:focus {
+    border-bottom-color: #7abaff;
+}
+
+/* Pfeile entfernen */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; margin: 0; 
+}
+
+/* 7. Button */
+button {
+    width: 120px; /* Feste Breite für den Button */
+    padding: 12px 0;
+    margin: 0; /* Kein Margin Top mehr nötig */
+    
+    background-color: #5a8bc9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: fit-content; /* Passt sich an */
+}
+
+button:hover {
+    background-color: #7abaff;
+}
+
+/* --- Mobile & Tablet Anpassungen --- */
+@media screen and (max-width: 600px) {
+    h1#headline {
+        font-size: 2.5em;
+        margin-top: 40px;
+    }
+
+    /* Auf Handy: Button etwas kleiner, aber immer noch daneben */
+    form {
+        gap: 10px; /* Engerer Abstand */
+    }
+
+    input[type="number"] {
+        font-size: 1.2em;
+    }
+
+    button {
+        width: 100px; /* Button schmaler */
+        font-size: 0.9em; /* Schrift kleiner */
+        padding: 10px 0;
+    }
+}
