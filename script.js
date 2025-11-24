@@ -7,7 +7,7 @@ function guessTheNumber() {
 
   if (numberToGuess == guess.value) {
     headline.innerHTML =
-      "Du hast die Zahl Erraten! 🥳🎉 <br>Versuche: " + tries;
+      "Du hast die Zahl Erraten! 🥳🎉 <br>In " + tries + "Versuchen geschafft!";
     const jsConfetti = new JSConfetti();
     jsConfetti.addConfetti();
     numberToGuess = Math.round(Math.random() * 100);
