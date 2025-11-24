@@ -20,7 +20,7 @@ function guessTheNumber() {
   } else if (numberToGuess > guess.value) {
     headline.innerHTML = " Die Zahl ist größer!!";
   } else if (numberToGuess < guess.value) {
-    headline.innerHTML = " Die Zahl ist kleiner!";
+    headline.innerHTML = " Die Zahl ist kleiner!!";
   }
 
   guess.value = "";
