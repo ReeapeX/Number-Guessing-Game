@@ -14,9 +14,9 @@ function guessTheNumber() {
     tries = 0;
     displayTries.innerHTML = "Versuche: " + tries;
   } else if (guess.value > 100) {
-    headline.innerHTML = " Die Zahl kann nicht größer als 100 sein!";
+    headline.innerHTML = " Die Zahl kann nicht größer als 100 sein.";
   } else if (guess.value < 0) {
-    headline.innerHTML = " Die Zahl kann nicht kleiner als 0 sein!";
+    headline.innerHTML = " Die Zahl kann nicht kleiner als 0 sein.";
   } else if (numberToGuess > guess.value) {
     headline.innerHTML = " Die Zahl ist größer!";
   } else if (numberToGuess < guess.value) {
